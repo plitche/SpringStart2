@@ -5,3 +5,9 @@
   2) 캡슐화
   3) 상속
   4) 다형성(Polymorphism)
+
+8.스프링 핵심 원리 이해1 - 예제 만들기 - 회원 도메인 개발
+  - private final MemberRepository memberRepository = new MemoryMemberRepository();
+  위와 같이 MemberRepository 타입으로 초기화 하는데, 그럼 왜
+  - private final MemoryMemberRepository memoryMemberRepository = new MemoryMemberRepository();
+  이렇게 하면 안되는 걸까?
