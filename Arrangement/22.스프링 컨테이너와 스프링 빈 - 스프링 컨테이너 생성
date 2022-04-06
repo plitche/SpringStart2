@@ -1,0 +1,13 @@
+	22.스프링 컨테이너와 스프링 빈 - 스프링 컨테이너 생성
+		* ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+			- ApplicationContext를 스프링 컨테이너라 한다.
+			- ApplicationContext는 인터페이스이다.
+			
+		* 스프링 컨테이너의 생성 과장
+			1. 스프링 컨테이너 생성
+				- 스프링 컨테이너 생성(AppConfig.class) -> 스프링 컨테이너(스프링 빈 저장소(빈 이름, 빈 객체) -> 구성정보 활용(AppConfig.class)
+			2. 스프링 빈 등록(@Bean)
+				- @Bean이 붙은 메소드명: 빈 이름
+				- return(반환)하는 객체: 빈 객체
+			3. 스프링 빈 의존관계 설정 - 준비
+			4. 스프링 빈 의존관계 설정 - 완료
