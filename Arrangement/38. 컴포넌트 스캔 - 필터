@@ -1,0 +1,10 @@
+	38. 컴포넌트 스캔 - 필터
+		- includeFilters: 컴포넌트 스캔에 추가할 대상
+		- excludeFilters: 컴포넌트 스캔에 제외할 대상
+		
+		* 옵션(FilterType)
+			- ANNOTATION: 기본 값, 애노테이션을 인식해서 동작한다.
+			- ASSIGNABLE_TYPE
+			- ASPECTJ
+			- REGEX
+			- CUSTOM
