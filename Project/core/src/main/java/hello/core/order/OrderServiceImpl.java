@@ -9,17 +9,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderServiceImpl implements OrderService {
 
-    @Autowired private final MemberRepository memberRepository;
+    private MemberRepository memberRepository;
     // private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
     // private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
     // -> DIP, OCP 위반됨 구현이 아닌 interface에만 의존하게 해야함.
 
     // final은 무조건 값이 할당 되어야 함으로 지운다. -> 근데 이러면 NPE가 발생함.
     // -> 해결하려면 누군가 클라이언트인 OrderServiceImpl에 DiscountPlicy의 객체를 대신 생성하고 주입 해주어야 한다.
-    @Autowired private final DiscountPolicy discountPolicy;
+    private DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
