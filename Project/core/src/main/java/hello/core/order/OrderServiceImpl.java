@@ -20,7 +20,7 @@ public class OrderServiceImpl implements OrderService {
     // -> 해결하려면 누군가 클라이언트인 OrderServiceImpl에 DiscountPlicy의 객체를 대신 생성하고 주입 해주어야 한다.
     private final DiscountPolicy discountPolicy;
 /*
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDisCountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
