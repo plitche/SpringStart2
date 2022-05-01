@@ -20,7 +20,7 @@ public class BeanLifeCycleTest {
 
     @Configuration
     static class ListCycleCOnfig {
-        @Bean
+        @Bean(initMethod = "init", destroyMethod = "close")// 매소드 이름과 연결됨
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://hello-spring.dev");
